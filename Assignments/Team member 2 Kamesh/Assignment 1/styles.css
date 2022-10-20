@@ -1,0 +1,133 @@
+.container {  display: grid;
+  grid-template-columns: 0.8fr 1.2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.a02 { grid-area: 2 / 1 / 4 / 2; }
+
+.top {  display: grid;
+  margin: black;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". image ."
+    ". image ."
+    ". Name .";
+  grid-area: 1 / 1 / 2 / 4;
+  width: 100%;
+  background-color: #4749e2;
+
+}
+
+.Name {
+ border-radius: 20px;
+  background-color:pink;
+  grid-area: Name;
+  width: 100%;
+  font-style: oblique;
+  text-align: center;
+
+}
+
+.image {
+   border-radius: 20px;
+  opacity: 50%;
+  grid-area: image;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color:white;
+  
+  
+}
+
+.a03 { grid-area: 2 / 2 / 4 / 4; }
+
+.a05 { grid-area: 3 / 1 / 4 / 2; }
+
+.skills {
+
+  background-color:#4749e2;
+  grid-area: 2 / 1 / 3 / 2;
+  width: 100%;
+
+.body{
+margin:0px;}
+html,
+body {
+margin: 0;
+padding: 0;
+height: 100%;
+width: 100%;
+}
+  
+}
+.skill{
+padding-left: 5%;
+}
+.miniskl{
+padding: 2%;
+padding-left:15%;
+}
+.hobbies { grid-area: 3 / 1 / 4 / 2;
+ background-color:#4749e2;
+
+ font-style: italic;
+ width:100%
+ }
+
+.education {
+
+background-color: lightgreen;
+display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "college college college"
+    "school school school"
+    "school1 school1 school1";
+  grid-area: 2 / 2 / 3 / 4;
+  width: 100%;
+
+}
+.ski{
+padding-left:10%;
+}
+.college {
+padding-left: 1%;
+    background-color:#ef74ef;
+  grid-area: college;
+
+  
+}
+
+.school {
+padding-left: 1%;
+  background-color:#ef74ef;
+  grid-area: school;
+
+  
+}
+
+.school1 {
+padding-left: 1%;
+    background-color:#ef74ef;
+  grid-area: school1;
+
+  }
+  .extra {
+  padding-left: 1%;
+  background-color: #ef74ef;
+grid-area: 3 / 2 / 4 / 4;
+
+}
