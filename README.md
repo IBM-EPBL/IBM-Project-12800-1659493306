@@ -8,7 +8,7 @@
 Team Leader : Mahin Hamesh<br>
 Team member : Natarajan<br>
 Team member : Kamesh<br>
-Team member: Lakshmi Sankar<br>
+Team member : Lakshmi Sankar<br>
 </p>
 
 
