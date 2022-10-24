@@ -1,13 +1,14 @@
- <h3>CUSTOMER CARE REGISTRY</h3>
+ <h2>CUSTOMER CARE REGISTRY</h2>
 
-<h5>Team ID</h5>     : PNT2022TMID00312
-<h5>Domain Name</h5> : CLOUD APPLICATION DEVELOPMENT
-<h5>College Name</h5>: St. Joseph's College of Engineering
-
-<h5>Team Leader</h5> : Mahin Hamesh
-<h5>Team member</h5> : Natarajan
-<h5>Team member</h5> : Kamesh
-<h5>Team member</h5> : Lakshmi Sankar
-
+<h4>Team ID</h4>     : PNT2022TMID00312
+<h4>Domain Name</h4> : CLOUD APPLICATION DEVELOPMENT
+<h4>College Name</h4>: St. Joseph's College of Engineering
+<br><br>
+<p>
+Team Leader : Mahin Hamesh<br>
+Team member : Natarajan<br>
+Team member : Kamesh<br>
+Team member: Lakshmi Sankar<br>
+</p>
 
 
