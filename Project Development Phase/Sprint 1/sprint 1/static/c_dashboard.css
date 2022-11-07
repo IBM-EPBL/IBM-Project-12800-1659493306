@@ -1,0 +1,55 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 70px 0 0 10px;
+  border-right: 1px solid lightgray;
+
+
+}
+/* .back{
+  background-color: aqua;
+} */
+.streach{
+
+  min-height: 100%;
+}
+html,
+body {
+  
+  margin: 0px;
+  height: 100%;
+}
+.car{
+  background-color:rgb(141, 141, 141);
+  padding-top: 90px;
+  
+}
+.sidebar-left {
+  position: sticky;
+  top: 0;
+  height: calc(100vh-70px);
+}
+
+.box {
+  background-color:rgb(141, 141, 141);
+  background-image: url('img.jpg');
+  height: 100%;
+}
+main {
+ height: 100%;
+}
+.h{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+
+}
+.inp {
+
+  padding:7px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 14px;
+}
