@@ -1,0 +1,105 @@
+<!doctype html>
+{% extends 'c_base.html' %}
+
+<html lang="en">
+
+
+
+{% block title %}Customer dashboard{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="../static/c_dashboard.css">
+<script src="../static/c_dashboard.js"></script>
+
+{% endblock %}
+
+
+{% block body %}
+
+{{ super() }}
+
+<div class="box">
+
+
+    <div class=" col-md-9 ml-sm-auto col-lg-10 px-4 car">
+
+        <div class="row main ">
+                <div class=" box" style="padding-top:200px;">
+            <div id="centering_1" style="color:rgb(0, 0, 0);">
+                <h1 style="width:1000px;">Enter your Query here</h1>
+                <p class="pt-3 pb-3 px-4">As you post your query our agents will get in touch with you shortly</p>
+            </div>
+
+
+            <div id="centering">
+                <div class="  car">
+                    <form action="postnow" method="post">
+                        <input class="inp" type="text" name="query" id="send_to_username">
+                        <button type="submit" class="btn btn-outline-dark" id="b_post">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <h1 id="h1">- _ -</h1>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <script>
+            var typed = new Typed("#h1", {
+                strings: ["Hello!!!",
+                    "You there", "Get your complaints clarified now"],
+
+                typeSpeed: 70,
+                backSpeed: 30,
+                loop: true,
+            });
+
+        </script> -->
+        </div>
+        <div class="status">
+            <table class="table table-striped table-light" id="myTable">
+                <thead class="thead-dark ">
+                    <tr>
+                        
+                        <th scope="row" onclick="sortTable(0)">Decsription</th>
+                        <th scope="row" onclick="sortTable(1)">Agent</th>
+                        <th scope="row" onclick="sortTable(1)">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in query %}
+                    <tr>
+                        
+                        <td style="color: rgb(0, 0, 0);">{{i["DESCRIPTION"]}}</td>
+                        <td style="color: black;">{{i["ANAME"]}}</td>
+                        <td style="color: black;">{{i["STATUS"]}}</td>
+                        
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "41c95f57-40d9-4468-b85a-880994264d6a", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "675ff7a6-0897-457b-a965-f8c9ac117c15", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+
+{% endblock %}
+
+</html>
