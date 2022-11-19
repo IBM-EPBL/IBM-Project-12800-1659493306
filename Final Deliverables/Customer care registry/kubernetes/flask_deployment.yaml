@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-care-registry
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer-care-registry
+  template:
+    metadata:
+      labels:
+        app: customer-care-registry
+
+    spec:
+      containers:
+        - name: customer-care-registry
+          image: jp.icr.io/project_ccr/repo:finaldeliverable
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              protocol: TCP

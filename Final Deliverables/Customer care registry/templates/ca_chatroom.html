@@ -1,0 +1,62 @@
+<!doctype html>
+{% extends 'c_base.html' %}
+
+<html lang="en">
+
+
+
+{% block title %}Customer dashboard{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="../static/c_dashboard.css">
+<script src="../static/ca_chatroom.js"></script>
+
+{% endblock %}
+
+
+{% block body %}
+
+{{ super() }}
+    <div class="box">
+        <div class=" col-md-9 ml-sm-auto col-lg-10 px-4 car">
+        <h1>POST QUERY</h1>
+        <div id="messages"></div>
+         
+        <br>
+        <select class="inp" name="login_as" id="select_agent">
+          {% for j in query %}
+          <option id ="userid" value = " {{j['ASSIGNED_AGENT']}} ">{{j['ANAME']}}</option>
+          {% endfor %}
+        </select>
+
+        Message: <input class ="inp" type="text" id="private_message">
+        <button type="button" class="btn btn-outline-dark"id="send_private_message">Send</button>
+        
+
+    </div>
+    
+     
+        
+
+        </div>
+    </div>
+
+</div>
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "41c95f57-40d9-4468-b85a-880994264d6a", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "675ff7a6-0897-457b-a965-f8c9ac117c15", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+
+{% endblock %}
+
+</html>
