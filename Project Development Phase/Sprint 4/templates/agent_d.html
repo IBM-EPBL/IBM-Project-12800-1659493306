@@ -1,0 +1,159 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="../static/c_dashboard.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/c_dashboard.css">
+    <script src="../static/c_dashboard.js"></script>
+
+</head>
+
+
+<body>
+ 
+    <nav class="navbar navbar-expand-lg fixed-top shadow navbar-dark bg-primary">
+        <div class="">
+            <a class="navbar-brand " style="color: rgb(255, 255, 255);" href="#">{{name}}</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse ms-auto" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('agent_dashboard') }}" style="color: rgb(0, 0, 0);">Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+              
+                <li class="nav-item">
+                    <div class="icon nav-link  " id="notify" style="color: rgb(0, 0, 0);"> Notifications </div>
+                    <div class="notifications" id="box">
+                        <h2>Notifications - <span>{{notification_count}}</span></h2>
+                        {% for notification in notifications %}
+                        <div class="notifications-item">
+                            <div class="text">
+                                <p>{{notification['THE_MESSAGE']}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
+
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right  " aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">My account</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="{{ url_for('signin') }}">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-md-2 bg-dark d-none d-md-block sidebar " style="border: none;">
+                <div class="left-sidebar ">
+                    <!-- need responsiveness-->
+                    <ul class="nav flex-column">
+                     
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="{{ url_for('chat',user='agent') }}#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
+                                </svg>
+                                Clear complaints</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
+                                </svg>
+                                Manage</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class=" col-md-9 ml-sm-auto col-lg-10 px-4 car" style="padding-top: 100px;">
+
+                <div class="Task">
+                    <table class="table table-striped table-light" id="myTable">
+                        <thead class="thead-dark ">
+                            <tr>
+                                <th scope="row" onclick="sortTable(0)">Decsription</th>
+                                <th scope="row" onclick="sortTable(1)">customer</th>
+                                <th scope="row" onclick="sortTable(1)">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in query %}
+                            <tr>
+
+                                <td style="color: rgb(0, 0, 0);">{{i["DESCRIPTION"]}}</td>
+                                <td style="color: black;">{{i["CNAME"]}}</td>
+                                <td style="color: black;">{{i["STATUS"]}}</td>
+
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+</body>
+
+
+
+
+</html>
